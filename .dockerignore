@@ -1,0 +1,7 @@
+.gitignore
+.idea/
+.git/
+.github
+venv/
+test/
+kubernetes/
