@@ -2,7 +2,7 @@ name: Create Docker image
 
 on:
   push:
-    tags: [ '*-*_v*.*.*' ]
+    tags: [ 'v*.*.*' ]
 
 env:
   REGISTRY: ghcr.io
