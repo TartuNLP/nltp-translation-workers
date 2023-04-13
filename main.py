@@ -40,9 +40,9 @@ async def ready(response: Response):
     except requests.exceptions.ConnectionError:
         response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
         return "Connection error!"
-    return "OK!"
+    return "OK"
 
 
 @app.get("/health/live")
 async def live():
-    return "OK!"
+    return "OK"
