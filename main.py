@@ -32,17 +32,21 @@ async def translate(tr_rq: TranslationRequest):
 
 @app.get("/health/ready")
 async def ready(response: Response):
+    status_code = 200
+    title = "OK"
     try:
         r = requests.get("https://api.tartunlp.ai/translation/v2")
         if f'{SOURCE}-{TARGET}' not in list(filter(lambda x: x['name'] == 'General', r.json()['domains']))[0]['languages']:
             response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
-            return "Service unavailable!"
+            status_code = "503"
+            title = "Service unavailable!"
     except requests.exceptions.ConnectionError:
         response.status_code = status.HTTP_503_SERVICE_UNAVAILABLE
-        return "Connection error!"
-    return "OK"
+        status_code = "503"
+        title = "Connection error!"
+    return {"status": status_code, "title": title}
 
 
 @app.get("/health/live")
 async def live():
-    return "OK"
+    return {"status": 200, "title": "OK"}
