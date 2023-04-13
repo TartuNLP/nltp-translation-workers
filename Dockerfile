@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt && rm requirements.
 
 COPY . .
 
-ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80", "--proxy-headers", "--log-config", "logging/logging.ini"]
+ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--proxy-headers", "--log-config", "logging/logging.ini"]
