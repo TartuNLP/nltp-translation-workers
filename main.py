@@ -8,8 +8,8 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-SOURCE = "ger"
-TARGET = "est"
+SOURCE = "est"
+TARGET = "ger"
 DOMAIN = "general"
 APPLICATION = "NLTP"
 
