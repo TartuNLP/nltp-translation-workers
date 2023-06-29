@@ -9,7 +9,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 SOURCE = "est"
-TARGET = "eng"
+TARGET = "vro"
 DOMAIN = "general"
 APPLICATION = "NLTP"
 
