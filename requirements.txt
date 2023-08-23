@@ -1,2 +1,2 @@
-requests~=2.31.2
+requests~=2.31.0
 fastapi[all]~=0.101.1
